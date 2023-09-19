@@ -4,7 +4,7 @@ const fs = require("fs");
 // to the `orders` array.
 function addOrder(value) {
   console.log(value);
-  const item = menu.find((v) => v.name === value); //=== for comparison
+  const item = menu.find((v) => v.name === value); // use '===' for comparison
   if (item) {
     orders.push(item);
   } else console.log("This item is currently unavailable!");
@@ -70,7 +70,7 @@ const fns = {
   dueAmount: dueAmount,
   drinksOnly: () => only("drink"),
   foodOnly: () => only("food"),
-  //additional functions
+  // additional functions
   fulfillOrder: fulfillOrder,
   cheapestItem: cheapestItem,
 };
@@ -94,4 +94,6 @@ commands.orders.forEach((cmd) => {
   fns[cmd.command](cmd.value);
 });
 
-//bugs: missing fullfillorder and cheapestItem function, === comparison in addOrder
+// Run: node index.js menu.json orders.json
+
+// Bugs: missing fullfillorder and cheapestItem function, === comparison in addOrder
