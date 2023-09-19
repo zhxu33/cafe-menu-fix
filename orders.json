@@ -1,0 +1,50 @@
+{
+    "orders": [
+        {
+            "command": "addOrder",
+            "value": "cinnamon roll"
+        },
+        {
+            "command": "addOrder",
+            "value": "iced coffee"
+        },
+        {
+            "command": "listOrders"
+        },
+        {
+            "command": "dueAmount"
+        },
+        {
+            "command": "fulfillOrder"
+        },
+        {
+            "command": "fulfillOrder"
+        },
+        {
+            "command": "fulfillOrder"
+        },
+        {
+            "command": "addOrder",
+            "value": "hot cocoa"
+        },
+        {
+            "command": "addOrder",
+            "value": "iced tea"
+        },
+        {
+            "command": "listOrders"
+        },
+        {
+            "command": "dueAmount"
+        },
+        {
+            "command": "cheapestItem"
+        },
+        {
+            "command": "drinksOnly"
+        },
+        {
+            "command": "foodOnly"
+        }
+    ]
+}

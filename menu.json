@@ -1,0 +1,79 @@
+{
+    "menu": [
+        {
+            "name": "orange juice",
+            "price": 2.13,
+            "kind": "drink"
+        },
+        {
+            "name": "lemonade",
+            "kind": "drink",
+            "price": 0.85
+        },
+        {
+            "name": "cranberry juice",
+            "kind": "drink",
+            "price": 3.36
+        },
+        {
+            "name": "pineapple juice",
+            "kind": "drink",
+            "price": 1.89
+        },
+        {
+            "name": "lemon iced tea",
+            "kind": "drink",
+            "price": 1.28
+        },
+        {
+            "name": "apple iced tea",
+            "kind": "drink",
+            "price": 1.28
+        },
+        {
+            "name": "vanilla chai latte",
+            "kind": "drink",
+            "price": 2.48
+        },
+        {
+            "name": "hot chocolate",
+            "kind": "drink",
+            "price": 0.99
+        },
+        {
+            "name": "iced coffee",
+            "kind": "drink",
+            "price": 1.12
+        },
+        {
+            "name": "tuna sandwich",
+            "kind": "food",
+            "price": 0.95
+        },
+        {
+            "name": "ham and cheese sandwich",
+            "kind": "food",
+            "price": 1.35
+        },
+        {
+            "name": "bacon and egg",
+            "kind": "food",
+            "price": 1.15
+        },
+        {
+            "name": "steak",
+            "kind": "food",
+            "price": 3.28
+        },
+        {
+            "name": "hamburger",
+            "kind": "food",
+            "price": 1.05
+        },
+        {
+            "name": "cinnamon roll",
+            "kind": "food",
+            "price": 1.05
+        }
+    ]
+}

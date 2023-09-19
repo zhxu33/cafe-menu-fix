@@ -1,0 +1,129 @@
+This node.js javascript code reads JSON from two files then processes the JSON objects it read.
+It would be called as `<program> menu.json orders.json`
+
+There are *two* bugs that you will attempt to find and correct.
+
+--------------------------------------------------------------------
+```
+
+
+// Require the FileSystem module to read the files
+const fs = require('fs');
+
+// Add the item indicated by the value passed
+// to the `orders` array.
+function addOrder(value) {
+    const item = menu.find(v => v.name = value);
+    if (item) {
+        orders.push(item);
+        console.log('Order added!');
+    }
+    else console.log('This item is currently unavailable!');
+}
+
+// List (to the console) all the current orders that have been added
+function listOrders() {
+    console.log(
+        orders.length > 0
+          ? orders.map(o => o.name).join(', ')
+          : 'No orders to list!'
+    );
+}
+
+// Output (to the console) the total price of all the current orders
+function dueAmount() {
+    console.log(
+        orders.length > 0
+          ? orders.map(o => o.price)
+                  .reduce((a, price) => a + price)
+          : '0.00'
+    );
+}
+
+// List (to the console) only the kind of items passed
+function only(kind) {
+    console.log(menu
+        .filter(m => m.kind === kind)
+        .map(m => m.name)
+        .join(', ')
+    );
+}
+
+// Map the function names to the functions to call
+const fns = {
+    'addOrder'     : addOrder,
+    'listOrders'   : listOrders,
+    'dueAmount'    : dueAmount,
+    'drinksOnly'   : () => only('drink'),
+    'foodOnly'     : () => only('food')
+};
+
+
+// Program logic starts here
+
+// Read the menu file and the order file
+//  arg 1 is this program file,
+//  arg 2 the menu file to read,
+//  arg 3 is the command file to read
+
+const menu = JSON.parse(
+    fs.readFileSync(process.argv[2])
+).menu;
+
+const commands = JSON.parse(
+    fs.readFileSync(process.argv[3])
+);
+
+// Create the initially-empty order queue
+const orders = [];
+
+// Process each order found in the commands
+commands.orders.forEach(cmd => fns[cmd.command](value));
+
+--------------------------------------------------------------------
+
+These are samples of what the input "menu" file and "orders" file look like.
+Knowing the structure may help you find errors in the code.
+The full files are available separately.
+
+menu.json
+---------
+{
+    "menu" : [
+        {
+            "name": "iced coffee",
+            "kind": "drink",
+            "price": 1.12
+        },
+        {
+            "name": "cinnamon roll",
+            "kind": "food",
+            "price": 1.05
+        }
+    ]
+}
+
+
+orders.json
+-----------
+{
+    "orders": [
+        {
+            "command": "addOrder",
+            "value": "cinnamon roll"
+        },
+        {
+            "command": "addOrder",
+            "value": "iced coffee"
+        },
+        {
+            "command": "listOrders"
+        },
+        {
+            "command": "dueAmount"
+        }
+    ]
+}
+
+
+```
