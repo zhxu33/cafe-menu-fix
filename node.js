@@ -94,6 +94,6 @@ commands.orders.forEach((cmd) => {
   fns[cmd.command](cmd.value);
 });
 
-// Run: node index.js menu.json orders.json
+// Run: node node.js menu.json orders.json
 
 // Bugs: missing fullfillorder and cheapestItem function, === comparison in addOrder
